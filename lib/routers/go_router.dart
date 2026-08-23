@@ -29,16 +29,15 @@ final GoRouter appRouter = GoRouter(
         final  id = state.pathParameters['id']!;
         return DetailsScreen(selectedId: int.parse(id));
       },
-
     ),
     GoRoute(
-      path: "/a_propos",
+      path: "/apropos",
       name: "apropos",
       builder: (context, state) =>AProposScreen()
 
     ),
     GoRoute(
-        path: "/nous_ecrire",
+        path: "/nousecrire",
         name: "nous_ecrire",
         builder: (context, state) =>NousEcrire()
 
