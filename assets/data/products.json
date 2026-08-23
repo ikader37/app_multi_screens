@@ -1,0 +1,143 @@
+[
+  {
+    "id": 1,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": false
+  },
+  {
+    "id": 2,
+    "title": "ANE",
+    "description": "Description Ane",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": true
+
+  },
+  {
+    "id": 3,
+    "title": "Boeuf",
+    "description": "Description boeuf",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": true
+
+  },
+  {
+    "id": 4,
+    "title": "VELO",
+    "description": "Description velo",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": true
+
+  },
+  {
+    "id": 5,
+    "title": "MOTO",
+    "description": "Description MOTO",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+   "isFavorite": false
+
+  },
+  {
+    "id": 6,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": true
+
+  },
+  {
+    "id": 7,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": false
+
+  },
+  {
+    "id": 8,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": true
+
+  },
+  {
+    "id": 9,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": false
+
+  },
+  {
+    "id": 10,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": false
+
+  },
+  {
+    "id": 11,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": false
+
+  },
+  {
+    "id": 12,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": true
+
+  },
+  {
+    "id": 13,
+    "title": "Voiture",
+    "description": "Description voiture",
+    "price": 50000,
+    "isInPromotion": false,
+    "promotionPrice": 0,
+    "url":"assets/images/voiture.jpeg",
+    "isFavorite": true
+  }
+]
