@@ -28,4 +28,9 @@ class ProductservicesImpl implements ProductService{
     this._repository.addToFavorite(id);
   }
 
+  @override
+  Future<void> removeFromFavoris(int productId) async{
+    this._repository.removeFromFavorite(productId);
+  }
+
 }

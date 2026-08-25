@@ -144,5 +144,21 @@ class Productrepositoryimpl implements Repository<Products>{
       jsonEncode(_products.map((product) => product.toJson()).toList()) as List<Map<String, dynamic>>,
     );
   }
+
+  @override
+  Future<void> removeFromFavorite(int productId) async{
+    final jsonString = await storage.read();
+    // final List<dynamic> products = jsonDecode(jsonString);
+    final index = _products.indexWhere(
+          (product) => product.id == productId,
+    );
+    if (index == -1) {
+      return;
+    }
+    _products[index].isFavorite = false;
+    await storage.write(
+      jsonEncode(_products.map((product) => product.toJson()).toList()) as List<Map<String, dynamic>>,
+    );
+  }
   
 }

@@ -110,8 +110,10 @@ class DetailsScreen extends ConsumerWidget {
           SizedBox(
             height: 9,
           ),
-          PrimaryButton(text: "Mettre en favorie",
+          product.isFavorite?PrimaryButton(text: "Retirer de la liste des favoris",
+              onPressed: (){productservices.removeFromFavoris(product.id);}):PrimaryButton(text: "Mettre en favorie",
               onPressed: (){productservices.addToFavorite(product.id);})
+
         ],
       ),
     );

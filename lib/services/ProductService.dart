@@ -7,5 +7,6 @@ abstract  interface class ProductService{
   Future<Products> findById(int id);
   Future<void> addToFavorite(int id);
   Future<List<Products>> findMyFavorite();
+  Future<void> removeFromFavoris(int productId);
 
 }

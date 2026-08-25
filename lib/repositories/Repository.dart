@@ -7,6 +7,8 @@ Future<void> init();
   Future<List<T>> findMyFavorite();
   Future<List<T>> searchByTitle(String title);
   Future<void> addToFavorite(int productId);
-  // Future<void> commentOnProduct();
+Future<void> removeFromFavorite(int productId);
+
+// Future<void> commentOnProduct();
 
 }
