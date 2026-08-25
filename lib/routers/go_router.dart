@@ -8,7 +8,6 @@ import 'package:app_multi_screens/screens/details_screen.dart';
 import 'package:app_multi_screens/screens/favorite_screen.dart';
 import 'package:app_multi_screens/screens/nous_ecrire.dart';
 import 'package:app_multi_screens/screens/profil_screen.dart';
-import 'package:app_multi_screens/servicesImpl/productServicesImpl.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(

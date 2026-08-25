@@ -1,9 +1,7 @@
-import 'package:app_multi_screens/servicesImpl/productServicesImpl.dart';
 import 'package:app_multi_screens/utilities/Responsive.dart';
 import 'package:app_multi_screens/widgets/product_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../models/Products.dart';
 

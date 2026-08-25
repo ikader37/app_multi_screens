@@ -22,28 +22,10 @@ class ProductservicesImpl implements ProductService{
     return this._repository.findMyFavorite();
   }
 
-  @override
-  Future<String> addToCart(int id, int quantity) {
-    // TODO: implement addToCart
-    throw UnimplementedError();
-  }
 
   @override
-  Future<Products> addToFavorite(int id) {
-    // TODO: implement addToFavorite
-    throw UnimplementedError();
+  Future<void> addToFavorite(int id) async{
+    this._repository.addToFavorite(id);
   }
 
-
-  @override
-  Future<List<Products>> listCartItems() {
-    // TODO: implement listCartItems
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<void> removeFromCart(int id) {
-    // TODO: implement removeFromCart
-    throw UnimplementedError();
-  }
 }

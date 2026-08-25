@@ -1,10 +1,8 @@
 import 'dart:convert';
 import 'dart:async';
-
 import 'package:app_multi_screens/customExceptions/ProductException.dart';
 import 'package:app_multi_screens/models/Products.dart';
 import 'package:app_multi_screens/repositories/Repository.dart';
-
 import '../utilities/FileStorage.dart';
 
 class Productrepositoryimpl implements Repository<Products>{
@@ -18,7 +16,7 @@ class Productrepositoryimpl implements Repository<Products>{
     product.id = maxId + 1; // Assign a unique ID based on the current maximum ID
     _products.add(product);
     await storage.write(
-      jsonEncode(_products.map((task) => product.toJson()).toList()) as List<Map<String, dynamic>>,
+      jsonEncode(_products.map((product) => product.toJson()).toList()) as List<Map<String, dynamic>>,
     );
   }
 
@@ -129,6 +127,22 @@ class Productrepositoryimpl implements Repository<Products>{
   Future<List<Products>> searchByTitle(String title) async{
     await init();
     return _products.where((produit)=>produit.title.toLowerCase().contains(title.toLowerCase())).toList();
+  }
+
+  @override
+  Future<void> addToFavorite(int productId) async{
+    final jsonString = await storage.read();
+    // final List<dynamic> products = jsonDecode(jsonString);
+    final index = _products.indexWhere(
+          (product) => product.id == productId,
+    );
+    if (index == -1) {
+      return;
+    }
+    _products[index].isFavorite = true;
+    await storage.write(
+      jsonEncode(_products.map((product) => product.toJson()).toList()) as List<Map<String, dynamic>>,
+    );
   }
   
 }

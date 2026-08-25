@@ -11,3 +11,4 @@ final productsProvider = FutureProvider<List<Products>>((ref) async {
   final service = ref.read(productServiceProvider);
   return service.listAllProducts();
 });
+

@@ -72,6 +72,8 @@ class DetailsScreen extends ConsumerWidget {
       WidgetRef ref,
       Products product,
       ) {
+    final ProductservicesImpl productservices = ProductservicesImpl();
+
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -108,7 +110,8 @@ class DetailsScreen extends ConsumerWidget {
           SizedBox(
             height: 9,
           ),
-          PrimaryButton(text: "Mettre en favorie",onPressed: (){})
+          PrimaryButton(text: "Mettre en favorie",
+              onPressed: (){productservices.addToFavorite(product.id);})
         ],
       ),
     );

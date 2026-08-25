@@ -1,12 +1,9 @@
 import 'package:app_multi_screens/utilities/Responsive.dart';
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ProfilScreen extends StatefulWidget {
   const ProfilScreen({super.key});
-
   @override
   State<ProfilScreen> createState() => _ProfilScreenState();
 }
@@ -14,15 +11,11 @@ class ProfilScreen extends StatefulWidget {
 class _ProfilScreenState extends State<ProfilScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController _nameController =
-  TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
 
-  final TextEditingController _emailController =
-  TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
-  final TextEditingController _subjectController =
-  TextEditingController();
-
+  final TextEditingController _subjectController = TextEditingController();
 
   @override
   void dispose() {
@@ -31,18 +24,6 @@ class _ProfilScreenState extends State<ProfilScreen> {
     _subjectController.dispose();
 
     super.dispose();
-  }
-
-  void _sendMessage() {
-    if (!_formKey.currentState!.validate()) {
-      return;
-    }
-
-
-
-    _nameController.clear();
-    _emailController.clear();
-    _subjectController.clear();
   }
 
   @override
@@ -64,7 +45,6 @@ class _ProfilScreenState extends State<ProfilScreen> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final isTablet = Responsive().isTablet(context);
-
           return SingleChildScrollView(
             padding: EdgeInsets.symmetric(
               horizontal: isTablet ? 100 : 20,
@@ -75,11 +55,6 @@ class _ProfilScreenState extends State<ProfilScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
-                  // ------------------------------------------------
-                  // HEADER
-                  // ------------------------------------------------
-
                   Center(
                     child: Container(
                       width: 85,
@@ -101,18 +76,17 @@ class _ProfilScreenState extends State<ProfilScreen> {
                   Center(
                     child: Text(
                       'Mon Profil',
-                      style:
-                      theme.textTheme.headlineSmall?.copyWith(
+                      style: theme.textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
 
                   const SizedBox(height: 8),
+
                   // ------------------------------------------------
                   // NOM
                   // ------------------------------------------------
-
                   Text(
                     'Nom complet',
                     style: theme.textTheme.titleSmall?.copyWith(
@@ -127,17 +101,13 @@ class _ProfilScreenState extends State<ProfilScreen> {
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                       hintText: 'Entrez votre nom',
-                      prefixIcon: const Icon(
-                        Icons.person_outline,
-                      ),
+                      prefixIcon: const Icon(Icons.person_outline),
                       border: OutlineInputBorder(
-                        borderRadius:
-                        BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(14),
                       ),
                     ),
                     validator: (value) {
-                      if (value == null ||
-                          value.trim().isEmpty) {
+                      if (value == null || value.trim().isEmpty) {
                         return 'Veuillez entrer votre nom';
                       }
 
@@ -154,44 +124,32 @@ class _ProfilScreenState extends State<ProfilScreen> {
                   // ------------------------------------------------
                   // EMAIL
                   // ------------------------------------------------
-
                   Text(
                     'Adresse email',
                     style: theme.textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-
                   const SizedBox(height: 8),
-
                   TextFormField(
                     controller: _emailController,
-                    keyboardType:
-                    TextInputType.emailAddress,
+                    keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                       hintText: 'exemple@email.com',
-                      prefixIcon: const Icon(
-                        Icons.email_outlined,
-                      ),
+                      prefixIcon: const Icon(Icons.email_outlined),
                       border: OutlineInputBorder(
-                        borderRadius:
-                        BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(14),
                       ),
                     ),
                     validator: (value) {
-                      if (value == null ||
-                          value.trim().isEmpty) {
+                      if (value == null || value.trim().isEmpty) {
                         return 'Veuillez entrer votre email';
                       }
 
-                      final emailRegex = RegExp(
-                        r'^[^@\s]+@[^@\s]+\.[^@\s]+$',
-                      );
+                      final emailRegex = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
 
-                      if (!emailRegex.hasMatch(
-                        value.trim(),
-                      )) {
+                      if (!emailRegex.hasMatch(value.trim())) {
                         return 'Veuillez entrer une adresse email valide';
                       }
 
