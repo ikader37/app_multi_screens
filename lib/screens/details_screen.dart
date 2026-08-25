@@ -1,11 +1,13 @@
 import 'package:app_multi_screens/models/Products.dart';
-import 'package:app_multi_screens/services/productServices.dart';
+import 'package:app_multi_screens/riverpods/CartProvider.dart';
+import 'package:app_multi_screens/servicesImpl/productServicesImpl.dart';
 import 'package:app_multi_screens/widgets/primary_button.dart';
 import 'package:app_multi_screens/widgets/section_title.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends ConsumerWidget {
   final int selectedId;
 
   const DetailsScreen({
@@ -14,8 +16,8 @@ class DetailsScreen extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    final Productservices productservices = Productservices();
+  Widget build(BuildContext context,WidgetRef ref) {
+    final ProductservicesImpl productservices = ProductservicesImpl();
 
     return Scaffold(
       appBar: AppBar(
@@ -59,7 +61,7 @@ class DetailsScreen extends StatelessWidget {
           }
 
           final product = snapshot.data!;
-          return _buildProductDetails(context, product);
+          return _buildProductDetails(context, ref,product);
         },
       ),
     );
@@ -67,6 +69,7 @@ class DetailsScreen extends StatelessWidget {
 
   Widget _buildProductDetails(
       BuildContext context,
+      WidgetRef ref,
       Products product,
       ) {
     return SingleChildScrollView(
@@ -96,7 +99,16 @@ class DetailsScreen extends StatelessWidget {
             '${product.description}',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
-          PrimaryButton(text: "Mettre en favorie")
+          PrimaryButton(text: "Ajouter au panier",onPressed: (){
+            ref.read(cartProvider.notifier).addProduct(product);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Produit a été ajouté dans le panier"),));
+          }
+
+          , ),
+          SizedBox(
+            height: 9,
+          ),
+          PrimaryButton(text: "Mettre en favorie",onPressed: (){})
         ],
       ),
     );

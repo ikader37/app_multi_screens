@@ -3,10 +3,12 @@ import 'dart:async';
 import 'package:app_multi_screens/main.dart';
 import 'package:app_multi_screens/models/Products.dart';
 import 'package:app_multi_screens/screens/a_propos_screen.dart';
+import 'package:app_multi_screens/screens/cart_screen.dart';
 import 'package:app_multi_screens/screens/details_screen.dart';
 import 'package:app_multi_screens/screens/favorite_screen.dart';
 import 'package:app_multi_screens/screens/nous_ecrire.dart';
-import 'package:app_multi_screens/services/productServices.dart';
+import 'package:app_multi_screens/screens/profil_screen.dart';
+import 'package:app_multi_screens/servicesImpl/productServicesImpl.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -40,6 +42,18 @@ final GoRouter appRouter = GoRouter(
         path: "/nousecrire",
         name: "nous_ecrire",
         builder: (context, state) =>NousEcrire()
+
+    ),
+    GoRoute(
+        path: "/carts",
+        name: "carts",
+        builder: (context, state) =>CartScreen()
+
+    ),
+    GoRoute(
+        path: "/profil",
+        name: "profil",
+        builder: (context, state) =>ProfilScreen()
 
     ),
   ],

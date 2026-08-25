@@ -8,6 +8,7 @@ class Products {
  int id;
  bool isFavorite;
 
+
   Products({required this.id, required this.url, required this.title, required this.description, required this.price,
     required this.isInPromotion, required this.promotionPrice,this.isFavorite=false});
 

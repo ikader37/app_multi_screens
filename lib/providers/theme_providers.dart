@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
@@ -20,3 +21,8 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+final themeProvider =
+StateProvider<ThemeMode>((ref) {
+  return ThemeMode.system;
+});
