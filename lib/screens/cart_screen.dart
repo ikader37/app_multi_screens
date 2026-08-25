@@ -1,4 +1,4 @@
-import 'package:app_multi_screens/riverpods/CartProvider.dart';
+import 'package:app_multi_screens/providers/CartProvider.dart';
 import 'package:app_multi_screens/widgets/CartItemGrid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';

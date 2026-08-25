@@ -1,7 +1,7 @@
 import 'package:app_multi_screens/models/Products.dart';
-import 'package:app_multi_screens/riverpods/ProductProvier.dart';
-import 'package:app_multi_screens/riverpods/productSortProvider.dart';
-import 'package:app_multi_screens/riverpods/searchProvider.dart';
+import 'package:app_multi_screens/providers/ProductProvier.dart';
+import 'package:app_multi_screens/providers/productSortProvider.dart';
+import 'package:app_multi_screens/providers/searchProvider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final filteredProductsProvider =

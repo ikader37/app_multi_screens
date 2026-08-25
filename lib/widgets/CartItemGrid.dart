@@ -1,5 +1,5 @@
 import 'package:app_multi_screens/models/CartIem.dart';
-import 'package:app_multi_screens/riverpods/CartProvider.dart';
+import 'package:app_multi_screens/providers/CartProvider.dart';
 import 'package:app_multi_screens/utilities/Responsive.dart';
 import 'package:app_multi_screens/widgets/CustomCartItem.dart';
 import 'package:flutter/material.dart';

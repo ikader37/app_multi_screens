@@ -1,5 +1,5 @@
 import 'package:app_multi_screens/models/Products.dart';
-import 'package:app_multi_screens/riverpods/filterProductsProvider.dart';
+import 'package:app_multi_screens/providers/filterProductsProvider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 enum ProductSort {

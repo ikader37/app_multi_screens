@@ -1,5 +1,5 @@
 import 'package:app_multi_screens/models/Products.dart';
-import 'package:app_multi_screens/riverpods/CartProvider.dart';
+import 'package:app_multi_screens/providers/CartProvider.dart';
 import 'package:app_multi_screens/servicesImpl/productServicesImpl.dart';
 import 'package:app_multi_screens/widgets/primary_button.dart';
 import 'package:app_multi_screens/widgets/section_title.dart';
