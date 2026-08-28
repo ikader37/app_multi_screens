@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/CartIem.dart';
-import '../providers/CartNotifier.dart';
+import '../riverpods/CartNotifier.dart';
 
 final cartProvider = StateNotifierProvider<
     CartNotifier,

@@ -1,4 +1,3 @@
-import 'package:app_multi_screens/models/Products.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton  extends StatelessWidget{

@@ -147,7 +147,6 @@ class Productrepositoryimpl implements Repository<Products>{
 
   @override
   Future<void> removeFromFavorite(int productId) async{
-    final jsonString = await storage.read();
     // final List<dynamic> products = jsonDecode(jsonString);
     final index = _products.indexWhere(
           (product) => product.id == productId,

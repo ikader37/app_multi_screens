@@ -1,7 +1,5 @@
-import 'dart:async';
 
 import 'package:app_multi_screens/main.dart';
-import 'package:app_multi_screens/models/Products.dart';
 import 'package:app_multi_screens/screens/a_propos_screen.dart';
 import 'package:app_multi_screens/screens/cart_screen.dart';
 import 'package:app_multi_screens/screens/details_screen.dart';

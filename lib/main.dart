@@ -1,6 +1,6 @@
-import 'package:app_multi_screens/providers/CartProvider.dart';
-import 'package:app_multi_screens/providers/productSortProvider.dart';
-import 'package:app_multi_screens/providers/searchProvider.dart';
+import 'package:app_multi_screens/riverpods/CartProvider.dart';
+import 'package:app_multi_screens/riverpods/productSortProvider.dart';
+import 'package:app_multi_screens/riverpods/searchProvider.dart';
 import 'package:app_multi_screens/routers/go_router.dart';
 import 'package:app_multi_screens/utilities/Responsive.dart';
 import 'package:app_multi_screens/widgets/customGrid.dart';
