@@ -57,8 +57,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
 
   @override
   Widget build(BuildContext buildContext) {
-    final products = ref.watch(sortedProductsProvider);
-    final cart = ref.watch(cartProvider);
+    final productsAsync = ref.watch(sortedProductsProvider);    final cart = ref.watch(cartProvider);
 
     final location = GoRouterState.of(buildContext).uri.path;
 
@@ -120,7 +119,8 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
         ),
         centerTitle: true,
         actions: <Widget>[
-          DropdownButton(
+          DropdownButton<ProductSort>(
+            hint: Text("Trier"),
             items: [
               DropdownMenuItem(
                 value: ProductSort.name,
@@ -157,13 +157,59 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
           ),
         ],
       ),
-      body: products.when(
-        data: (products) {
-          return CustomGrid(items: products);
+      body: productsAsync.when(
+        data: (productsAsync) {
+          return CustomGrid(items: productsAsync);
         },
         loading: () => const Center(child: CircularProgressIndicator()),
 
-        error: (error, stack) => Center(child: Text('Erreur : $error')),
+        error: (error, stack) {
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.error_outline,
+                    size: 60,
+                    color: Colors.red,
+                  ),
+
+                  const SizedBox(height: 16),
+
+                  const Text(
+                    'Impossible de charger les produits',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const SizedBox(height: 8),
+
+                  Text(
+                    error.toString(),
+                    textAlign: TextAlign.center,
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      ref.invalidate(sortedProductsProvider);
+                    },
+                    icon: const Icon(Icons.refresh),
+                    label: const Text('Réessayer'),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+
+
+
       ),
     );
   }
