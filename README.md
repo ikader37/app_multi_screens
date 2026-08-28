@@ -108,7 +108,7 @@ Fonctionnalités :
 
 L'application propose une gestion du panier permettant de préparer une commande.
 
-Fonctionnalités prévues/implémentées :
+Fonctionnalités implémentées :
 
 * Ajouter un produit au panier.
 * Afficher les produits du panier.
@@ -145,7 +145,7 @@ Exemple d'affichage :
 
 ## 👤 Profil utilisateur
 
-Un écran de profil utilisateur **mock** est également prévu.
+Un écran de profil utilisateur  est également implementé.
 
 Il permet de présenter une interface utilisateur sans nécessiter pour le moment de système d'authentification réel.
 
@@ -161,20 +161,7 @@ Informations affichées :
 * Notifications.
 * Déconnexion.
 
-Les données utilisateur sont actuellement simulées.
-
 ---
-
-## 🌙 Thème clair / sombre
-
-L'application prend en charge :
-
-* Le thème clair.
-* Le thème sombre.
-* La modification dynamique du thème.
-* L'utilisation du `ThemeData` Flutter.
-
-Le thème est géré à travers le système de state management de l'application.
 
 ---
 
