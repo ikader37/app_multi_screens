@@ -11,12 +11,8 @@ import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(
-    // MaterialApp.router(
-    //   routerConfig: appRouter,
-    //   title: "MYACHAT"
-    // ),
+
     ProviderScope(
-      // create: (_) => ThemeProvider(),
       child: const MyApp(),
     ),
   );
@@ -28,36 +24,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // final themeProvider = ref.watch(themeProvider);
 
     return MaterialApp.router(
       title: 'MYACHAT',
 
       routerConfig: appRouter,
 
-      // themeMode: themeProvider.themeMode,
-      //
-      // theme: ThemeData(
-      //   brightness: Brightness.light,
-      //   primarySwatch: Colors.blue,
-      //   scaffoldBackgroundColor: Colors.white,
-      //   appBarTheme: const AppBarTheme(
-      //     backgroundColor: Colors.blue,
-      //     foregroundColor: Colors.white,
-      //   ),
-      // ),
-      //
-      // darkTheme: ThemeData(
-      //   brightness: Brightness.dark,
-      //   primarySwatch: Colors.blue,
-      //   scaffoldBackgroundColor: const Color(0xFF121212),
-      //   appBarTheme: const AppBarTheme(
-      //     backgroundColor: Color(0xFF1F1F1F),
-      //     foregroundColor: Colors.white,
-      //   ),
-      // ),
     );
-    // home: Center(child: MyHomePage(title: 'MyAchats')),
   }
 }
 

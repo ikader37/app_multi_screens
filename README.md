@@ -322,13 +322,13 @@ Exemple :
 [
   {
     "id": 1,
-    "name": "iPhone 15",
+    "title": "iPhone 15",
     "price": 450000,
     "isFavorite": true
   },
   {
     "id": 2,
-    "name": "Samsung Galaxy S24",
+    "title": "Samsung Galaxy S24",
     "price": 400000,
     "isFavorite": false
   }
