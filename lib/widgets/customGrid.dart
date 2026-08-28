@@ -16,9 +16,9 @@ class CustomGrid extends StatelessWidget {
     return GridView.builder(
 
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: this.responsive.isMobile(context)
+        crossAxisCount: responsive.isMobile(context)
             ? 2
-            : this.responsive.isTablet(context)
+            : responsive.isTablet(context)
             ? 4
             : 6,
         crossAxisSpacing: 8, // Espace horizontal

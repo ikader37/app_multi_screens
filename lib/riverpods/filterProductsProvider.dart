@@ -8,7 +8,7 @@ final filteredProductsProvider =
 Provider<AsyncValue<List<Products>>>((ref) {
   final products = ref.watch(productsProvider);
   final search = ref.watch(searchProvider);
-  final sort=ref.watch(productSortProvider);
+  // final sort=ref.watch(productSortProvider);
 
   return products.whenData(
         (items) {

@@ -16,7 +16,7 @@ void main() {
 
               onIncrement: () {},
               onDecrement: () {},
-              onRemove: () {}, cartItem: CartItem(product: Products(id: 1, url: "url", title: "iPhone 15", description: "description", price: 1000, isInPromotion: false, promotionPrice: 0), quantity: 10),
+              onRemove: () {}, cartItem: CartItem(product: Products(id: 1, url: "url", title: "iPhone 15", description: "description", price: 1000, isInPromotion: false, promotionPrice: 0), quantity: 2),
             ),
           ),
         ),

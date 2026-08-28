@@ -157,7 +157,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
           ),
         ],
       ),
-      body: products?.when(
+      body: products.when(
         data: (products) {
           return CustomGrid(items: products);
         },
