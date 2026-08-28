@@ -399,7 +399,7 @@ app_multi_screens/
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/ikader37/app_multi_screens.git
+git clone -b commerce https://github.com/ikader37/app_multi_screens.git
 ```
 
 ### 2. Se positionner sur la branche commerce
@@ -407,8 +407,6 @@ git clone https://github.com/ikader37/app_multi_screens.git
 ```bash
 cd app_multi_screens
 
-git checkout commerce
-```
 
 ### 3. Installer les dépendances
 
