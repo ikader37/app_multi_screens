@@ -88,7 +88,7 @@ class _ProfilScreenState extends State<ProfilScreen> {
                   // NOM
                   // ------------------------------------------------
                   Text(
-                    'Nom complet',
+                    'Nom complete',
                     style: theme.textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -99,8 +99,10 @@ class _ProfilScreenState extends State<ProfilScreen> {
                   TextFormField(
                     controller: _nameController,
                     textInputAction: TextInputAction.next,
+                    initialValue: 'KAKA SILVA KK',
                     decoration: InputDecoration(
-                      hintText: 'Entrez votre nom',
+                      hintText: 'KAKA SILVA',
+
                       prefixIcon: const Icon(Icons.person_outline),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(14),
@@ -135,8 +137,9 @@ class _ProfilScreenState extends State<ProfilScreen> {
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
+                    initialValue: "monemail@gmail.con.com",
                     decoration: InputDecoration(
-                      hintText: 'exemple@email.com',
+                      hintText: 'monemail@gmail.con.com',
                       prefixIcon: const Icon(Icons.email_outlined),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(14),

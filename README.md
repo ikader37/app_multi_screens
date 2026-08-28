@@ -18,7 +18,6 @@ L'application utilise actuellement un **stockage local JSON** pour simuler la pe
 * Mettre en place une architecture séparant l'interface, les services et la persistance.
 * Créer des widgets réutilisables.
 * Gérer les favoris et le panier.
-* Implémenter un thème clair/sombre.
 * Mettre en place une navigation multi-écrans.
 * Gérer les états de chargement et les erreurs.
 * Préparer l'application à une future connexion à une API REST.
@@ -87,7 +86,7 @@ Chaque produit possède notamment la propriété :
 ```json
 {
   "id": 1,
-  "name": "Produit exemple",
+  "title": "Produit exemple",
   "price": 45000,
   "isFavorite": true
 }

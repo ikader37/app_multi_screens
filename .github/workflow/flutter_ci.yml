@@ -3,11 +3,9 @@ name: Flutter CI
 on:
   push:
     branches:
-      - main
       - commerce
   pull_request:
     branches:
-      - main
       - commerce
 
 jobs:
