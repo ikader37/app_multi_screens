@@ -109,14 +109,13 @@ L'application propose une gestion du panier permettant de préparer une commande
 
 Fonctionnalités implémentées :
 
-* Ajouter un produit au panier.
-* Afficher les produits du panier.
-* Modifier la quantité.
-* Augmenter la quantité.
-* Diminuer la quantité.
-* Supprimer un produit.
-* Calculer le total d'une ligne.
-* Calculer le total du panier.
+### 🛒 Panier d'achat
+- [x] Ajouter un produit au panier
+- [x] Augmenter la quantité d'un produit
+- [x] Diminuer la quantité d'un produit
+- [x] Modifier directement la quantité
+- [x] Supprimer un produit du panier
+- [x] Vider le panier
 
 Exemple d'affichage :
 
@@ -208,6 +207,19 @@ Il gère notamment :
 
 ---
 
+
+## 🧠 Gestion d'état avec Riverpod
+
+L'application utilise exclusivement Riverpod pour la gestion d'état.
+
+Les principaux providers sont :
+
+- `productsProvider` : chargement asynchrone des produits.
+- `cartProvider` : gestion du panier.
+- `filterProductProvider` : filtrage des produits.
+- `productSortProvider` : tri des produits.
+- `searchProvider` : la recherche/filtre des produits 
+
 # 🏗️ Architecture
 
 Le projet suit une architecture permettant de séparer les responsabilités.
@@ -230,8 +242,8 @@ lib/
 │   └── Productservices.dart
 │
 ├── riverpods/
-│   └── cartNotifier.dart
-│   └── cartProvider.dart  
+│   └── cartNotifier.dart: manages cart state and business actions.
+│   └── cartProvider.dart  :makes CartNotifier accessible to the Flutter UI.
 │   └── filterProductProvider.dart
 │   └── ProductProvider.dart
 │   └── productSortProvider.dart
@@ -261,6 +273,14 @@ lib/
     ├── FileStorage.dart
     └── Responsive.dart
 ```
+| File                     | Responsibility                   |
+| ------------------------ | -------------------------------- |
+| `cart_notifier.dart`     | Business logic                   |
+| `cart_provider.dart`     | Riverpod dependency registration |
+| `product_provider.dart`  | Provides products                |
+| `filter_provider.dart`   | Manages filters                  |
+| `sort_provider.dart`     | Manages sorting                  |
+
 
 ---
 
@@ -492,7 +512,7 @@ Ce projet permet de mettre en pratique :
 * Repository Pattern.
 * Séparation des responsabilités.
 * Widgets réutilisables.
-* Gestion d'état.
+* Gestion d'état avec riverpod.
 * Navigation.
 * Persistance locale.
 * Gestion des erreurs.
@@ -504,23 +524,23 @@ Ce projet permet de mettre en pratique :
 
 # 📌 État du projet
 
-| Fonctionnalité          | État |
-| ----------------------- | :--: |
-| Liste des produits      |   ✅  |
-| Recherche               |   ✅  |
-| Détail produit          |   ✅  |
-| Favoris                 |   ✅  |
-| Persistance des favoris |   ✅  |
-| Panier                  |  🚧  |
-| Profil utilisateur mock |  🚧  |
-| Thème clair/sombre      |   ✅  |
-| Responsive              |   ✅  |
-| Navigation GoRouter     |   ✅  |
-| Stockage JSON           |   ✅  |
-| API REST                |  🔜  |
-| Authentification        |  🔜  |
-| Commandes               |  🔜  |
-| Paiement                |  🔜  |
+| Fonctionnalité          | État  |
+| ----------------------- |:-----:|
+| Liste des produits      |   ✅   |
+| Recherche               |   ✅   |
+| Détail produit          |   ✅   |
+| Favoris                 |   ✅   |
+| Persistance des favoris |   ✅   |
+| Panier                  |   ✅   |
+| Profil utilisateur mock |   ✅   |
+| Thème clair/sombre      |   ✅   |
+| Responsive              |   ✅   |
+| Navigation GoRouter     |   ✅   |
+| Stockage JSON           |   ✅   |
+| API REST                |  🔜   |
+| Authentification        |  🔜   |
+| Commandes               |   ✅   |
+| Paiement                |  🔜   |
 
 ---
 

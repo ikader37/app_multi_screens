@@ -1,39 +1,71 @@
-import 'package:app_multi_screens/models/CartIem.dart';
 import 'package:app_multi_screens/models/Products.dart';
-import 'package:app_multi_screens/widgets/CustomCartItem.dart';
-import 'package:flutter/material.dart';
+import 'package:app_multi_screens/riverpods/CartNotifier.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-
 void main() {
-  testWidgets(
-    'CustomCartItem should display product and quantity',
-        (WidgetTester tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Scaffold(
-            body: CustomCartItem(
+  late CartNotifier cartNotifier;
+  late Products product;
 
-              onIncrement: () {},
-              onDecrement: () {},
-              onRemove: () {}, cartItem: CartItem(product: Products(id: 1, url: "url", title: "iPhone 15", description: "description", price: 1000, isInPromotion: false, promotionPrice: 0), quantity: 2),
-            ),
-          ),
-        ),
-      );
+  setUp(() {
+    cartNotifier = CartNotifier();
 
-      expect(find.text('iPhone 15'), findsOneWidget);
-      expect(find.text('2'), findsOneWidget);
+    product = Products(
+      id: 1,
+      title: 'Test Product',
+      price: 100,
+      url: '', description: '',
+      isInPromotion: false, promotionPrice: 0,
+    );
+  });
 
-      expect(
-        find.byIcon(Icons.add),
-        findsOneWidget,
-      );
+  group('CartNotifier', () {
+    test('should add a product to the cart', () {
+      cartNotifier.addProduct(product);
 
-      expect(
-        find.byIcon(Icons.remove),
-        findsOneWidget,
-      );
-    },
-  );
+      expect(cartNotifier.state.length, 1);
+      expect(cartNotifier.state.first.product.id, 1);
+      expect(cartNotifier.state.first.quantity, 1);
+    });
+
+    test('should increase product quantity', () {
+      cartNotifier.addProduct(product);
+
+      cartNotifier.increment(product.id);
+
+      expect(cartNotifier.state.first.quantity, 2);
+    });
+
+    test('should decrease product quantity', () {
+      cartNotifier.addProduct(product);
+      cartNotifier.increment(product.id);
+
+      cartNotifier.decrement(product.id);
+
+      expect(cartNotifier.state.first.quantity, 1);
+    });
+
+    test('should remove product from cart', () {
+      cartNotifier.addProduct(product);
+
+      cartNotifier.removeProduct(product.id);
+
+      expect(cartNotifier.state, isEmpty);
+    });
+
+    test('should update product quantity', () {
+      cartNotifier.addProduct(product);
+
+      cartNotifier.updateQuantity(product.id, 5);
+
+      expect(cartNotifier.state.first.quantity, 5);
+    });
+
+    test('should remove product when quantity becomes zero', () {
+      cartNotifier.addProduct(product);
+
+      cartNotifier.updateQuantity(product.id, 0);
+
+      expect(cartNotifier.state, isEmpty);
+    });
+  });
 }

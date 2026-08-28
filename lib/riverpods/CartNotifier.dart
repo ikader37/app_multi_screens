@@ -76,6 +76,22 @@ class CartNotifier
     state = items;
   }
 
+  void updateQuantity(int productId,int quantity) {
+    final items = [...state];
+
+    final index = items.indexWhere(
+          (item) => item.product.id == productId,
+    );
+
+    if (index != -1) {
+      items[index] = items[index].copyWith(
+        quantity: quantity,
+      );
+
+      state = items;
+    }
+  }
+
   double get total {
     return state.fold(
       0,
