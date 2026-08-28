@@ -243,14 +243,18 @@ lib/
 ├── services/
 │   └── Productservices.dart
 │
-├── providers/
-│   └── theme_providers.dart
+├── riverpods/
+│   └── cartNotifier.dart
+│   └── cartProvider.dart  
+│   └── filterProductProvider.dart
+│   └── ProductProvider.dart
+│   └── productSortProvider.dart
+│   └── searchProvider.dart
 │
 ├── routers/
 │   └── go_router.dart
 │
 ├── screens/
-│   ├── home_screen.dart
 │   ├── details_screen.dart
 │   ├── favorite_screen.dart
 │   ├── cart_screen.dart
@@ -264,6 +268,8 @@ lib/
 │   ├── product_card.dart
 │   ├── custom_cart_item.dart
 │   └── section_title.dart
+│   └── CartItemGrid.dart
+│   └── customCartItem.dart
 │
 └── utilities/
     ├── FileStorage.dart
@@ -282,6 +288,11 @@ Les données suivent le flux suivant :
                   └──────┬──────┘
                          │
                          ▼
+               ┌─────────────────┐
+               │ riverpods │
+               └────────┬────────┘
+                        │
+                        ▼
                ┌─────────────────┐
                │ Productservices │
                └────────┬────────┘
@@ -345,11 +356,11 @@ Le champ `isFavorite` permet de conserver l'état favori du produit.
 # 🛠️ Technologies utilisées
 
 | Technologie   | Utilisation                 |
-| ------------- | --------------------------- |
+|---------------| --------------------------- |
 | Flutter       | Framework mobile            |
 | Dart          | Langage de programmation    |
 | FutureBuilder | Chargement asynchrone       |
-| Provider      | Gestion d'état              |
+| riverpods     | Gestion d'état              |
 | GoRouter      | Navigation                  |
 | JSON          | Stockage local des produits |
 | FileStorage   | Gestion de la persistance   |
@@ -468,15 +479,6 @@ Le projet pourra évoluer vers une véritable plateforme e-commerce.
 * Historique des commandes.
 * Suivi de commande.
 * Détails d'une commande.
-
-### Paiement
-
-Intégration future de solutions de paiement adaptées au contexte africain :
-
-* Mobile Money.
-* Orange Money.
-* Moov Money.
-* Carte bancaire.
 
 ### Backend
 
